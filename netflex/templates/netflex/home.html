@@ -1,11 +1,127 @@
 {%extends 'netflex/base.html'%}
 <!-- html -->
 {% block content %}
+
+<!-- Bootstrap -->
+{%load bootstrap4%}
 <!-- static -->
 {% load static%}
 <!-- content -->
-<div class="container-fluid">
-  <h3 class="text-center">Netflex</h3>
+
+<!-- navbar -->
+<div id="nav" class="navbar">
+  <img src="../../static/images/netflix-logo.png" alt="" />
+  <img src="../../static/images/netflix-avatar.png" alt="" />
+</div>
+
+<!-- header -->
+<header>
+  <img src="../../static/images/banner.jpg" alt="" />
+
+  <div class="header__content">
+    <h1 class="header__title">Money Heist</h1>
+    <div class="buttons">
+      <button class="buttons__btn">Watch Trailer</button>
+      <button class="buttons__btn">More</button>
+    </div>
+    <p class="header__contentDescription">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde illo magni,
+      nobis itaque repellat voluptatum. Labore eligendi veniam soluta asperiores
+      perferendis eius veritatis officia saepe placeat ea, aspernatur culpa
+      repudiandae.
+    </p>
+  </div>
+
+  <div class="bg-image"></div>
+</header>
+
+
+
+<!-- <div class="row-wrapper">
+  <div class="row">
+    <div class="row__title">Netflix Originals</div>
+    <div class="row__posters">
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie1.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie2.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie3.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie4.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie5.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie6.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie7.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+      <img
+        class="row__poster row__posterLarge"
+        src="../../static/images/large-movie8.jpg"
+        alt=""
+        data-bs-toggle="modal"
+        data-bs-target="#{{ movie }}"
+      />
+    </div>
+  </div>
+</div> -->
+
+<div
+  class="modal fade"
+  id="{{movie}}"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header m-0 p-2">
+        <h4 class="modal-title">title</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body m-0 p-3"></div>
+    </div>
+  </div>
 </div>
 
 {% endblock%}

@@ -1,0 +1,12 @@
+<script>
+  const nav = document.getElementById("nav");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 100) {
+      console.log("hughes");
+      nav.classList.add("nav__black");
+    } else {
+      nav.classList.remove("nav__black");
+    }
+  });
+</script>
