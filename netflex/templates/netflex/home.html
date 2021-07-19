@@ -16,110 +16,76 @@
 
 <!-- header -->
 <header>
-  <img src="../../static/images/banner.jpg" alt="" />
+  <img
+    src="https://image.tmdb.org/t/p/w342/{{movie_highlight.poster_path}}"
+    alt=""
+  />
 
   <div class="header__content">
-    <h1 class="header__title">Money Heist</h1>
+    <h1 class="header__title">{{movie_highlight.title}}</h1>
     <div class="buttons">
       <button class="buttons__btn">Watch Trailer</button>
       <button class="buttons__btn">More</button>
     </div>
-    <p class="header__contentDescription">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde illo magni,
-      nobis itaque repellat voluptatum. Labore eligendi veniam soluta asperiores
-      perferendis eius veritatis officia saepe placeat ea, aspernatur culpa
-      repudiandae.
-    </p>
+    <p class="header__contentDescription">{{movie_highlight.overview}}</p>
   </div>
 
   <div class="bg-image"></div>
 </header>
 
-
-
-<!-- <div class="row-wrapper">
+<div class="row-wrapper">
   <div class="row">
-    <div class="row__title">Netflix Originals</div>
-    <div class="row__posters">
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie1.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie2.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie3.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie4.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie5.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie6.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie7.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
-      <img
-        class="row__poster row__posterLarge"
-        src="../../static/images/large-movie8.jpg"
-        alt=""
-        data-bs-toggle="modal"
-        data-bs-target="#{{ movie }}"
-      />
+    <div class="row__title">Netflix Trending</div>
+    <div class="scroll_wrapper">
+      <button id="btn-left">
+        <img src="../../static/images/left_next.png" alt="" />
+      </button>
+
+      <div class="row__posters" id="con">
+        {% for movie in movies_trending %}
+
+        <a href="{%url 'single_movie' movie.id%}">
+          <img
+            src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"
+            class="row__poster row__posterLarge"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#{{ movie }}"
+          />
+        </a>
+        {% endfor %}
+      </div>
+
+      <button id="btn-right">
+        <img src="../../static/images/right_next.png" alt="" />
+      </button>
     </div>
   </div>
-</div> -->
+  <div class="row mb-5">
+    <div class="row__title mt-5">Popular movies</div>
+    <div class="scroll_wrapper">
+      <button id="btn-left1">
+        <img src="../../static/images/left_next.png" alt="" />
+      </button>
 
-<div
-  class="modal fade"
-  id="{{movie}}"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header m-0 p-2">
-        <h4 class="modal-title">title</h4>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+      <div class="row__posters" id="con1">
+        {% for movie in popular_movies %}
+
+        <a href="{%url 'single_movie' movie.id%}">
+          <img
+            src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"
+            class="row__poster row__posterLarge"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#{{ movie }}"
+          />
+        </a>
+        {% endfor %}
       </div>
-      <div class="modal-body m-0 p-3"></div>
+
+      <button id="btn-right1">
+        <img src="../../static/images/right_next.png" alt="" />
+      </button>
     </div>
   </div>
 </div>
